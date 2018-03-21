@@ -133,8 +133,8 @@ void usage() {
 }
 
 void version() {
-  printf("pstree (OS mini lab) 0.1\n"
-         "Copyright (C) 2018 Chen Shaoyuan\n");
+  printf("pstree (linux-utils)\n"
+         "This is free and unencumbered software released into the public domain.\n");
   exit(EXIT_SUCCESS);
 }
 

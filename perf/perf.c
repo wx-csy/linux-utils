@@ -260,6 +260,8 @@ void child(int argc, char *argv[], char *envp[]) {
     die("dup2()");
   if (close(pipefd[1]) == -1)
     die("close()");
+  
+  
   if (execve("/usr/bin/strace", argv_c, envp) == -1)
     die("execve()");
 }
