@@ -22,6 +22,10 @@ crepl
 ------
 A simple read-eval-write loop for C programming language. Use gcc as compiler.
 
+- A line beginning with "int " is considered as a function that returns `int`;
+- Otherwise it is considered as an expression of type `int`;
+- Any invalid input will lead to undefined behaviour.
+
 ### Example ###
     
     This is a read-eval-print loop for C programming language.
