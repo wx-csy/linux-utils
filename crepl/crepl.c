@@ -27,7 +27,7 @@ void dl_die() {
   exit(EXIT_FAILURE);
 }
 
-void welcome(void) {
+void welcome() {
   printf("%s",
     "This is a read-eval-print loop for C programming language.\n"
     "To exit, type `exit'.\n");
@@ -35,7 +35,7 @@ void welcome(void) {
 
 typedef uint32_t guid_t;
 
-guid_t guid(void) {
+guid_t guid() {
   static guid_t next = 0;
   return next++;
 }
@@ -72,7 +72,7 @@ int rm_callback(const char *fpath, const struct stat *sb, int typeflag,
   return 0;
 }
 
-void rmtmp(void) {
+void rmtmp() {
   nftw(tmpdir, rm_callback, 8, FTW_DEPTH | FTW_MOUNT | FTW_PHYS);
 }
 
@@ -91,7 +91,6 @@ int compile(const char* srcpath, char* objpath) {
     die("fork()");
   } else if (pid == 0) {  // child
     if (execlp("gcc", "gcc", "-fPIC", "-shared", 
-          "-nostartfiles",
           "-Wno-implicit-function-declaration",
           "-o", objpath, srcpath, (char *)NULL) == -1)
       die("execlp()");
