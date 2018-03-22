@@ -14,3 +14,20 @@ pstree
       
 perf
 -----
+Print time consumption of systems calls.
+
+    Usage: perf command [arg]...
+
+crepl
+------
+A simple read-eval-write loop for C programming language. Use gcc as compiler.
+
+### Example ###
+    
+    This is a read-eval-print loop for C programming language.
+    To exit, type `exit'.
+    >>> int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+    >>> gcd(256, 144) * gcd(56, 84)
+    448
+    >>> exit
+    
