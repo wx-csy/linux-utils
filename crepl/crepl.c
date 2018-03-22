@@ -47,7 +47,7 @@ char *readline(const char* intro) {
   if (buf == NULL)
     die("malloc()");
   printf("%s", intro);
-  fflush(stdin);
+  fflush(stdout);
   while (1) {
     if (fgets(last, cap - (last - buf), stdin) == NULL) {
       if (feof(stdin)) {
