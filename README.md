@@ -20,7 +20,7 @@ Print time consumption of systems calls.
 
 crepl
 ------
-A simple read-eval-write loop for C programming language. Use gcc as compiler.
+A simple read-eval-print loop for C programming language. Use gcc as compiler.
 
 - A line beginning with "int " is considered as a function that returns `int`;
 - Otherwise it is considered as an expression of type `int`;
