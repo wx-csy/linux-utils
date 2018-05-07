@@ -34,4 +34,8 @@ A simple read-eval-print loop for C programming language. Use gcc as compiler.
     >>> gcd(256, 144) * gcd(56, 84)
     448
     >>> exit
+
+malloc
+-----
+An almost lock-free implementation of malloc/free. Extremely fast, but may unnecessarily consume too much memory.
     
