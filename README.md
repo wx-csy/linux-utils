@@ -26,7 +26,7 @@ A simple read-eval-print loop for C programming language. Use gcc as compiler.
 - Otherwise it is considered as an expression of type `int`;
 - Any invalid input will lead to undefined behaviour.
 
-### Example ###
+##### Example #####
     
     This is a read-eval-print loop for C programming language.
     To exit, type `exit'.
@@ -39,3 +39,18 @@ malloc
 -----
 An almost lock-free implementation of malloc/free. Extremely fast, but may unnecessarily consume too much memory.
     
+memhack
+-----
+This is a memory editing tool which can filter and modify the memory of other processes.
+
+    Usage: memhack PID
+    Trace the process specified by PID and hack its memory :)
+    
+##### Commands Supported #####
+- `pause`: pause the execution of the process;
+- `resume`: resume the execution of the process;
+- `lookup <number>`: incrementally filter 4-byte memory positions with value `<number>`;
+- `setup <number>`: set current found memory positions to value `<number>`;
+- `exit`: exit this tool.
+
+If operation is not permitted, please rerun in sudo mode.
