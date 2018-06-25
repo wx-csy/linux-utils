@@ -54,3 +54,19 @@ This is a memory editing tool which can filter and modify the memory of other pr
 - `exit`: exit this tool.
 
 If operation is not permitted, please rerun in sudo mode.
+
+kvdb
+-----
+A simple key-value database with concurrency and crash consistency support.
+
+- `int kvdb_open(kvdb_t *db, const char *filename)`:
+Open database. If file does not exist, create a new one.
+On success, return 0; on failure, return -1.
+- `int kvdb_close(kvdb_t *db)`:
+Close database.
+- `int kvdb_put(kvdb_t *db, const char *key, cosnt char *value)`:
+Write (key, value) pair to database. If the key already exists, the new value overwrites the old one.
+On success, return 0; on failure, return -1.
+- `char *kvdb_get(kvdb_t *db, const char *key)`:
+Get the value associated with key.
+If no such key exists, return NULL; otherwise, return pointer to value. The returned pointer is allocated from `malloc` and thus should be `free`d in order to prevent memory leak.
