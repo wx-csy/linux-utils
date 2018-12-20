@@ -155,6 +155,7 @@ namespace HTTP {
       std::ifstream file(site_path + path, file.binary | file.in);
       std::clog << "Read file: " << site_path + path << std::endl;
       if (!file) {
+        cache[hash].mut.unlock();
         send404(tcp);
         return ;
       }
